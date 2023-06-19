@@ -1,0 +1,19 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.grid-container {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+}
+
+.item {
+    border: 2px solid blue;
+    background-color: lightblue;
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    text-align: center;
+}

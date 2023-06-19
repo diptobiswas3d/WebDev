@@ -1,0 +1,41 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.blue-axis {
+    background-color: blue;
+    width: 500px;
+    height: 2px;
+    position: absolute;
+    top: 260px;
+    left: 10px;
+}
+
+.green-axis {
+    background-color: green;
+    width: 2px;
+    height: 500px;
+    position: absolute;
+    top: 10px;
+    left: 260px;
+}
+
+.box-container {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border: 2px solid red;
+    background-color: lightcoral;
+    width: 75px;
+    height: 75px;
+    margin: 5px;
+    text-align: center;
+}
