@@ -1,0 +1,23 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.container {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.box {
+    border: 2px solid green;
+    background-color: lightgreen;
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+    text-align: center;
+}
