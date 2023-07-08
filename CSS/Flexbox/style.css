@@ -21,16 +21,6 @@ body {
     left: 260px;
 }
 
-.box-container {
-    border: 2px solid black;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-}
-
 .box {
     border: 2px solid red;
     background-color: lightcoral;
@@ -38,4 +28,14 @@ body {
     height: 75px;
     margin: 5px;
     text-align: center;
+}
+
+.box-container {
+    border: 2px solid black;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }

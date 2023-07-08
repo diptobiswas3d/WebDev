@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.accordion {
+    width: 500px;
+    margin: auto;
+}
+
+.accordion-button {
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: #f5f5f5;
+    font-size: 1.25rem;
+    border-radius: 10px;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding: 0 15px;
+    font-size: 1.2rem;
+}
