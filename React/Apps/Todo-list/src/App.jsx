@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [newTodo, setNewTodo] = useState("");
+  const [todos, setTodos] = useState([]);
+
+  function handleInput(e) {
+    setNewTodo(e.target.value);
+  }
+
+  function addTodo() {
+    if (newTodo == "") return;
+    setTodos([...todos, { text: newTodo, completed: false }]);
+    setNewTodo("");
+  }
+
+  function toggleCheckbox(index) {
+    const newTodos = [...todos];
+    newTodos[index].completed = !newTodos[index].completed;
+    setTodos(newTodos);
+  }
+
+  function deleteTodo(index) {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <main>
+        <h1>Todo List</h1>
+        <input
+          type="text"
+          placeholder="Enter Todo"
+          value={newTodo}
+          onChange={(e) => handleInput(e)}
+        />
+        <button id="add-todo" onClick={() => addTodo()}>
+          +
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <div className="todo-container">
+          {todos.map((todo, index) => {
+            return (
+              <div className="todo" key={index}>
+                <p>{todo.text}</p>
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => toggleCheckbox(index)}
+                />
+                <button onClick={() => deleteTodo(index)}>Delete</button>
+              </div>
+            );
+          })}
+        </div>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
