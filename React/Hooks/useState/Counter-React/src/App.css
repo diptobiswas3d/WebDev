@@ -1,0 +1,23 @@
+main {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.btn {
+  border: 2px solid black;
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+}
