@@ -18,3 +18,9 @@ const pkmnTrainers = [
     town: "New Bark Town",
   },
 ];
+
+const filterTrainers = pkmnTrainers.filter((trainer) => trainer.age < 10);
+console.log(filterTrainers);
+
+const findTrainers = pkmnTrainers.find((trainer) => trainer.age < 10);
+console.log(findTrainers);
