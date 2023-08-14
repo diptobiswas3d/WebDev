@@ -46,8 +46,8 @@ console.log(restProperties);
 const newItems = [...items, "Harbor Mail"];
 console.log(newItems);
 
-const newJeyItems = [...keyItems, "Red Orb"];
-console.log(newJeyItems);
+const newKeyItems = [...keyItems, "Red Orb"];
+console.log(newKeyItems);
 
 const newTrainers = [
   ...pkmnTrainers,
