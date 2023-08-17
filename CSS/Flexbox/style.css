@@ -1,41 +1,50 @@
+h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: darkviolet;
+  text-align: center;
+}
+
 body {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 
 .blue-axis {
-    background-color: blue;
-    width: 500px;
-    height: 2px;
-    position: absolute;
-    top: 260px;
-    left: 10px;
+  background-color: blue;
+  width: 500px;
+  height: 2px;
+  position: absolute;
+  top: 335px;
+  left: 13px;
 }
 
 .green-axis {
-    background-color: green;
-    width: 2px;
-    height: 500px;
-    position: absolute;
-    top: 10px;
-    left: 260px;
-}
-
-.box {
-    border: 2px solid red;
-    background-color: lightcoral;
-    width: 75px;
-    height: 75px;
-    margin: 5px;
-    text-align: center;
+  background-color: green;
+  width: 2px;
+  height: 500px;
+  position: absolute;
+  top: 85px;
+  left: 263px;
 }
 
 .box-container {
-    border: 2px solid black;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  border: 5px solid black;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  /* align-content: center; */
+  /* justify-content: center; */
+  /* gap: 10px; */
+}
+
+.box {
+  border: 2px solid red;
+  background-color: lightcoral;
+  height: 75px;
+  width: 75px;
+  text-align: center;
+  margin: 5px;
 }
