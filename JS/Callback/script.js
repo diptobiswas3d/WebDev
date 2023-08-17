@@ -12,6 +12,10 @@ function div(a, b) {
   console.log(a / b);
 }
 
+sum(x, y);
+mul(x, y);
+div(x, y);
+
 function calc(a, b, callback) {
   callback(a, b);
 }
