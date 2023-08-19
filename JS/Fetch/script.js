@@ -1,43 +1,24 @@
-let x = 3;
-let y = 5;
+let url = "https://pokeapi.co/api/v2";
+let query = "/pokemon";
+let name = "/charizard";
 
-function sum(a, b) {
-  console.log(a + b);
+let ENDPOINT = url + query + name;
+
+console.log(ENDPOINT);
+
+fetch(ENDPOINT)
+  .then((res) => res.json())
+  .then((data) => console.log(data.sprites.front_default))
+  .catch((err) => console.log(err));
+
+async function getData(endpoint) {
+  try {
+    let res = await fetch(endpoint);
+    let data = await res.json();
+    console.log(data.sprites.front_default);
+  } catch (err) {
+    console.log(err);
+  }
 }
-function mul(a, b) {
-  console.log(a * b);
-}
 
-function div(a, b) {
-  console.log(a / b);
-}
-
-// sum(x, y);
-// mul(x, y);
-// div(x, y);
-
-function calc(a, b, callback) {
-  callback(a, b);
-}
-
-calc(x, y, sum);
-calc(x, y, mul);
-calc(x, y, div);
-
-addEventListener("mousemove", (e) => {
-  console.log(e.clientX, e.clientY);
-});
-
-// Callback Hell, Pyramid of Doom
-setTimeout(() => {
-  console.log("Alert 1");
-  setTimeout(() => {
-    console.log("Alert 2");
-    setTimeout(() => {
-      console.log("Alert 3");
-      setTimeout(() => {
-        console.log("Alert 4");
-      }, 4000);
-    }, 3000);
-  }, 2000);
-}, 1000);
+getData(ENDPOINT);

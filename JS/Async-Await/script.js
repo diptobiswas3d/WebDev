@@ -3,33 +3,51 @@ function afterOneSec(value) {
     setTimeout(() => {
       if (value) {
         console.log("Resolving...");
-        resolve(`Returned ${value}`);
+        resolve(`Resolved with ${value}`);
       } else {
-        console.log("Rejecting");
-        reject(new Error("Nothing to return"));
+        console.log("Rejecting...");
+        reject("No value to return");
       }
     }, 1000);
   });
 }
 
-// afterOneSec()
-//   .then((res) => console.log(res))
-//   .catch((err) => console.log(err.message))
-//   .finally(() =>
-//     setTimeout(() => {
-//       console.log("I'm finally executed.");
-//     }, 1000)
-//   );
-
-// async function asyncFunc() {
-//   return "Hello";
-// }
-
-// console.log(asyncFunc());
-
-async function processData(func, value) {
-  let res = func(value);
-  console.log(5);
+function afterHalfSec(value) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (value) {
+        console.log("Resolving...");
+        resolve(`Resolved with ${value}`);
+      } else {
+        console.log("Rejecting...");
+        reject("No value to return");
+      }
+    }, 500);
+  });
 }
 
-processData(afterOneSec, "Hello");
+// let promise = afterOneSec(5);
+
+// promise
+//   .then((res) => console.log(res))
+//   .catch((err) => console.log(err))
+//   .finally(() => console.log("This is finally invoked"));
+
+// async function asyncFunc() {
+//   return "Hello World";
+// }
+
+// let helloWorld = asyncFunc();
+// console.log(helloWorld);
+
+async function processData(func, value) {
+  let res = await func(val);
+  console.log("Something");
+  // all other code
+}
+
+processData(afterOneSec, 5)
+  .catch((err) => console.log(err))
+  .finally(() => console.log("I'm finally executed"));
+
+// Fetch
