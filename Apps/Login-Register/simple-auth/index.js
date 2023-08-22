@@ -1,10 +1,13 @@
+// npm init
+// npm i express bcrypt
+// npm i -D nodemon
 const express = require("express");
-const app = express();
 const bcrypt = require("bcrypt");
-
-const PORT = 3000;
+const app = express();
 
 app.use(express.json());
+
+const PORT = 3000;
 
 const users = [
   {
@@ -18,30 +21,29 @@ const users = [
 ];
 
 app.get("/", (req, res) => {
-  res.send(users);
+  res.json(users);
 });
 
 app.post("/register", async (req, res) => {
-  let salt = await bcrypt.genSalt();
-  let hashPassword = await bcrypt.hash(req.body.password, salt);
+  let hashPassword = await bcrypt.hash(req.body.password, 10);
   let user = { username: req.body.username, password: hashPassword };
   users.push(user);
-  res.send("Registered!");
+  res.json(user);
 });
 
 app.post("/login", async (req, res) => {
   let user = users.find((user) => user.username == req.body.username);
   if (!user) {
-    res.send("User not found.");
+    res.json({ msg: "User not found." });
   } else {
     if (await bcrypt.compare(req.body.password, user.password)) {
-      res.send("Login successful.");
+      res.json({ msg: "Login successful." });
     } else {
-      res.send("Invalid password.");
+      res.json({ msg: "Invalid password." });
     }
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`App running on PORT ${PORT}`);
+  console.log(`App listening on PORT ${PORT}`);
 });

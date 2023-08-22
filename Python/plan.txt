@@ -1,3 +1,5 @@
+Basics
+
 1. Intro
 2. Variables
 3. Operators
@@ -5,3 +7,4 @@
 5. Control Structure
 6. Loops
 7. Functions
+
