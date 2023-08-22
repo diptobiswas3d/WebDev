@@ -1,0 +1,44 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: whitesmoke;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+input {
+  width: 300px;
+  margin-bottom: 10px;
+  height: 30px;
+  font-size: 1.25rem;
+}
+
+button {
+  margin-top: 5px;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+a {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: absolute;
+  right: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: darkviolet;
+  text-decoration: none;
+}
