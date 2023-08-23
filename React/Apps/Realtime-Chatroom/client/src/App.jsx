@@ -34,23 +34,29 @@ function App() {
     // Cleanup: Clear the interval when the component unmounts.
     return () => clearInterval(interval);
   }, []);
+  console.log("Socket:", socket);
+  if (socket) {
+    socket.on("user-typing", (user) => {
+      console.log(user, "is typing - received from server");
+      console.log("Typing user before:", typingUser);
+      setTypingUser(user);
+      console.log("Typing user after:", typingUser);
+    });
+    // socket.emit("stop-typing", username);
+    socket.on("user-stop-typing", (user) => {
+      console.log(user, "stopped typing - received from server");
+      console.log("Typing user before:", typingUser);
+      if (typingUser == user) setTypingUser("");
+      console.log("Typing user after:", typingUser);
+    });
+  }
   useEffect(() => {
+    socket = socketioclient(ENDPOINT);
     // let randomUsername = pkmnTrainers[Math.floor(Math.random() * 10)];
     // setUsername(randomUsername);
     console.log(username, "joined the chat");
-    socket = socketioclient(ENDPOINT);
 
     socket.emit("new-user", username);
-
-    socket.on("user-typing", (user) => {
-      console.log(user, "is typing - received from server");
-      setTypingUser(user);
-    });
-    socket.emit("stop-typing", username);
-    socket.on("user-stop-typing", (user) => {
-      console.log(user, "stopped typing - received from server");
-      if (typingUser == user) setTypingUser("");
-    });
 
     socket.on("user-connected", (user) => {
       console.log(user, "joined the chat");
@@ -93,9 +99,9 @@ function App() {
     // console.log(message);
     // console.log(chat);
     socket.emit("send-chat-message", message);
+    setMessage("");
     socket.emit("stop-typing", username);
     console.log("Sending stop-typing to server after message sent");
-    setMessage("");
   }
 
   function writeMessage(e) {
@@ -109,8 +115,7 @@ function App() {
       socket.emit("typing", username);
       console.log("Sending typing to server");
     }
-    console.log(`${username}: ${curMessage}`);
-    console.log("Typing user:", typingUser);
+    // console.log(`${username}: ${curMessage}`);
   }
 
   return (
