@@ -1,0 +1,70 @@
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: darkviolet;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+}
+
+.login-register {
+  display: flex;
+  gap: 10px;
+}
+
+.post {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+h2,
+h3,
+h4,
+p {
+  margin: 5px;
+}
+
+form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  width: 300px;
+  height: 25px;
+  font-size: 1.25rem;
+}
+
+button {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}

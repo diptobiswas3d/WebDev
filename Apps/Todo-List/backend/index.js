@@ -12,12 +12,12 @@ app.use(cors());
 const todos = [
   {
     id: 1,
-    desc: "Write Python code",
+    name: "Write Python code",
     completed: false,
   },
   {
     id: 2,
-    desc: "Write JavaScript code",
+    name: "Write JavaScript code",
     completed: true,
   },
 ];
@@ -45,9 +45,10 @@ app.post("/todos", (req, res) => {
 });
 
 app.put("/todos/:id", (req, res) => {
-  let todo = todos.find((todo) => todo.id == req.params.id);
+  let todo = todos.find((todo) => todo.id == req.body.id);
+  console.log(todo);
   if (todo) {
-    todo.desc = req.body.desc;
+    todo.name = req.body.name;
     todo.completed = req.body.completed;
     res.json(todos);
   } else {
