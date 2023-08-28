@@ -1,19 +1,21 @@
 body {
-  margin: 0px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Comic Sans MS";
-  background-color: whitesmoke;
+  background-color: wheat;
 }
-#player,
-#best-player {
-  margin-right: 25px;
+
+h1,
+h2 {
+  margin: 5px;
 }
-#grid {
-  width: 450px;
-  height: 450px;
-}
-img {
-  padding: 2px 5px;
+
+.board {
+  margin-top: 10px;
+  background-color: white;
+  border: 2px solid black;
+  width: 412px;
+  height: 412px;
+  padding: 5px;
 }
