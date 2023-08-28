@@ -1,0 +1,19 @@
+body {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Comic Sans MS";
+  background-color: whitesmoke;
+}
+#player,
+#best-player {
+  margin-right: 25px;
+}
+#grid {
+  width: 450px;
+  height: 450px;
+}
+img {
+  padding: 2px 5px;
+}
