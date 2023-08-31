@@ -1,23 +1,49 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  background-color: whitesmoke;
 }
 
 .container {
-    border: 2px solid black;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
+  border: 2px solid black;
+  width: 500px;
+  height: 2000px;
+  background-color: white;
 }
 
-.box {
-    border: 2px solid green;
-    background-color: lightgreen;
-    width: 120px;
-    height: 120px;
-    margin: 5px;
-    text-align: center;
+.rect {
+  border: 2px solid green;
+  background-color: lightgreen;
+  width: 360px;
+  height: 90px;
+  margin: 5px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+#rect-1 {
+  position: static;
+}
+
+#rect-2 {
+  position: fixed;
+  z-index: 3;
+  background-color: wheat;
+  /* bottom: 20px;
+  right: 20px;
+  width: 200px;
+  height: 250px;
+  border-radius: 15px; */
+}
+
+#rect-3 {
+  position: absolute;
+  background-color: lightblue;
+  z-index: 2;
+}
+
+#rect-4 {
+  position: absolute;
+  background-color: lightcoral;
+  z-index: 1;
 }

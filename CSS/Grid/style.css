@@ -1,19 +1,43 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 
 .grid-container {
-    border: 2px solid black;
-    width: 500px;
-    height: 500px;
+  border: 2px solid black;
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px 100px;
 }
 
-.item {
-    border: 2px solid blue;
-    background-color: lightblue;
-    width: 75px;
-    height: 75px;
-    margin: 5px;
-    text-align: center;
+.box {
+  border: 2px solid blue;
+  background-color: lightblue;
+  margin: 5px;
+  text-align: center;
+}
+
+#box-1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+#box-2 {
+  grid-row: 1 / 2;
+  grid-column: 3 / 5;
+}
+#box-3 {
+  grid-row: span 3;
+  grid-column: span 2;
+}
+
+#box-4 {
+  grid-area: 3 / 1 / 5 / 3;
+}
+#box-5 {
+  grid-area: 3 / 1 / 5 / 5;
+  z-index: -1;
 }

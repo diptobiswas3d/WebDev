@@ -10,7 +10,7 @@ class Particle {
     this.y = y;
     this.speed = speed;
     this.angle = angle;
-    this.radius = Math.random() * 3 + 2;
+    this.radius = Math.random() * 4 + 1;
     this.opacity = 1;
   }
   draw() {
@@ -28,45 +28,47 @@ class Particle {
   }
 }
 
+const particle = new Particle(200, 100, 2, 1);
+const numOfParticlesOnMouseMove = 5;
+const particlesOnMouseMove = [];
+const numOfParticlesOnMouseClick = 250;
+const particlesOnMouseClick = [];
 let mouseClicked = false;
-const particlesMouseClick = [];
-const particlesMouseMove = [];
-const numOfParticlesMouseClick = 250;
-const numOfParticlesMouseMove = 5;
 
 function animate() {
-  requestAnimationFrame(animate);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  requestAnimationFrame(animate);
   if (mouseClicked) {
-    particlesMouseClick.forEach((particle, index) => {
+    particlesOnMouseClick.forEach((particle, index) => {
       particle.update();
       if (particle.opacity == 0) {
-        particlesMouseClick.splice(index, 1);
+        particlesOnMouseClick.splice(index, 1);
       }
     });
   }
-  particlesMouseMove.forEach((particle, index) => {
+  particlesOnMouseMove.forEach((particle, index) => {
     particle.update();
     if (particle.opacity == 0) {
-      particlesMouseMove.splice(index, 1);
+      particlesOnMouseMove.splice(index, 1);
     }
   });
 }
 
-addEventListener("click", (e) => {
-  for (let i = 0; i < numOfParticlesMouseClick; i++) {
-    let speed = Math.random() * 5 - 2.5;
-    let angle = Math.random() * Math.PI * 2;
-    particlesMouseClick.push(new Particle(e.clientX, e.clientY, speed, angle));
-  }
-  mouseClicked = true;
-});
+animate();
+
 addEventListener("mousemove", (e) => {
-  for (let i = 0; i < numOfParticlesMouseMove; i++) {
-    let speed = Math.random() * 2 - 1;
+  for (let i = 0; i < numOfParticlesOnMouseMove; i++) {
+    let speed = Math.random() * 3 - 1.5;
     let angle = Math.random() * Math.PI * 2;
-    particlesMouseMove.push(new Particle(e.x, e.y, speed, angle));
+    particlesOnMouseMove.push(new Particle(e.x, e.y, speed, angle));
   }
 });
 
-animate();
+addEventListener("click", (e) => {
+  for (let i = 0; i < numOfParticlesOnMouseClick; i++) {
+    let speed = Math.random() * 6 - 3;
+    let angle = Math.random() * Math.PI * 2;
+    particlesOnMouseClick.push(new Particle(e.x, e.y, speed, angle));
+  }
+  mouseClicked = true;
+});
