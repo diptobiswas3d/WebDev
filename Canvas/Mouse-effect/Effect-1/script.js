@@ -10,7 +10,7 @@ class Particle {
     this.y = y;
     this.speed = speed;
     this.angle = angle;
-    this.radius = Math.random() * 4 + 1;
+    this.radius = Math.random() * 15 + 4;
     this.opacity = 1;
   }
   draw() {
@@ -29,9 +29,9 @@ class Particle {
 }
 
 const particle = new Particle(200, 100, 2, 1);
-const numOfParticlesOnMouseMove = 5;
+const numOfParticlesOnMouseMove = 2;
 const particlesOnMouseMove = [];
-const numOfParticlesOnMouseClick = 250;
+const numOfParticlesOnMouseClick = 200;
 const particlesOnMouseClick = [];
 let mouseClicked = false;
 

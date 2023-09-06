@@ -19,7 +19,7 @@ class Particle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.radius = 3;
+    this.radius = 8;
     this.baseX = this.x;
     this.baseY = this.y;
   }
@@ -60,7 +60,7 @@ const particle = new Particle();
 particle.draw();
 
 const particlesArray = [];
-const totalNumOfParticles = 1000;
+const totalNumOfParticles = 500;
 
 for (let i = 0; i < totalNumOfParticles; i++) {
   let x = Math.random() * canvas.width;
