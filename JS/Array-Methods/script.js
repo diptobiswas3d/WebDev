@@ -19,7 +19,7 @@ const pkmnTrainers = [
   },
 ];
 
-const simplePkmnTrainers = ["Ash", "Red", "May", "Barry"];
+const simplePkmnTrainers = ["Ash", "Red", "May", "Barry", "Ash"];
 
 let paul = {
   name: "Paul",
@@ -28,47 +28,48 @@ let paul = {
   town: "Veilstone City",
 };
 
-// 1. push
-pkmnTrainers.push(paul);
-console.log(pkmnTrainers);
+// // 1. push
+// pkmnTrainers.push(paul);
+// console.log(pkmnTrainers);
 
-// // 2. push
-pkmnTrainers.pop();
-console.log(pkmnTrainers);
+// // 2. pop
+// pkmnTrainers.pop();
+// console.log(pkmnTrainers);
 
-// 3. unshift
-pkmnTrainers.unshift(paul);
-console.log(pkmnTrainers);
+// // 3. unshift
+// pkmnTrainers.unshift(paul);
+// console.log(pkmnTrainers);
 
-// 4. shift
-pkmnTrainers.shift();
-console.log(pkmnTrainers);
+// // 4. shift
+// pkmnTrainers.shift();
+// console.log(pkmnTrainers);
 
-// 5. indexOf
-let indexOfAsh = simplePkmnTrainers.indexOf("Ash");
-console.log(indexOfAsh);
+// // 5. indexOf
+// let indexOfAsh = simplePkmnTrainers.indexOf("Ash");
+// console.log(indexOfAsh);
 
-// 6. lastIndexOf
-let lastIndexOfAsh = simplePkmnTrainers.lastIndexOf("Ash");
-console.log(lastIndexOfAsh);
+// // 6. lastIndexOf
+// let lastIndexOfAsh = simplePkmnTrainers.lastIndexOf("Ash");
+// console.log(lastIndexOfAsh);
 
-// 7. slice
-let subsetPkmnTrainers = simplePkmnTrainers.slice(1, 3);
-console.log(subsetPkmnTrainers);
+// // 7. slice
+// let subsetSimplePkmnTrainers = simplePkmnTrainers.slice(1, 4);
+// console.log(simplePkmnTrainers);
+// console.log(subsetSimplePkmnTrainers);
 
-// 8. splice
-let removePkmnTrainer = simplePkmnTrainers.splice(1, 3);
-console.log(removePkmnTrainer);
-console.log(simplePkmnTrainers);
+// // 8. splice
+// let removePkmnTrainers = simplePkmnTrainers.splice(1, 3);
+// console.log(removePkmnTrainers);
+// console.log(simplePkmnTrainers);
 
-// 9. reverse
-let reversePkmnTrainers = pkmnTrainers.reverse();
-console.log(reversePkmnTrainers);
+// // 9. reverse
+// let revPkmnTrainers = pkmnTrainers.reverse();
+// console.log(revPkmnTrainers);
 
-// 10. concat
-let bigPkmnTrainers = pkmnTrainers.concat(simplePkmnTrainers);
-console.log(bigPkmnTrainers);
+// // 10. concat
+// let bigPkmnTrainers = pkmnTrainers.concat(simplePkmnTrainers);
+// console.log(bigPkmnTrainers);
 
-// 11. join
-let joinedPkmnTrainers = simplePkmnTrainers.join(" ");
-console.log(joinedPkmnTrainers);
+// // 11. join
+// let joinedPkmnTrainers = simplePkmnTrainers.join(" ");
+// console.log(joinedPkmnTrainers);
