@@ -1,30 +1,82 @@
-class PokemonType {
+// Single-level Inheritance
+// Multi-level Inheritance
+// Hierarchical Inheritance
+// Hybrid inheritance
+class Pokemon {
+    String name;
+
+    public void displayName() {
+        System.out.println("Name of this Pokemon is " + name);
+    }
+}
+
+class PokemonType extends Pokemon {
     String type;
 
-    public void printType() {
-        System.out.println("This is a " + type + " type Pokemon.");
+    public void displayNameAndType() {
+        System.out.println(name + " is a " + type + " type Pokemon");
     }
 }
 
-class Water extends PokemonType {
-    public void printType() {
-        System.out.println("This is a " + type + " type Pokemon.");
+class SecondaryType extends PokemonType {
+    String secondaryType;
+
+    public void displaySecondaryType() {
+        System.out.println(name + " has no secondary type.");
+    }
+
+    public void displaySecondaryType(String secondaryType) {
+        System.out.println(name + " has a secondary type " + secondaryType);
     }
 }
+
+class PokemonGen extends Pokemon {
+    int gen;
+
+    public void displayNameAndGen() {
+        System.out.println(name + " is from Gen " + gen);
+    }
+}
+
+// Multiple Inheritance
+// Diamond Problem
+// interface
 
 public class Inheritance {
     public static void main(String args[]) {
-        System.out.println("Hello World");
+        Pokemon eevee = new Pokemon();
 
-        PokemonType fire = new PokemonType();
+        eevee.name = "Eevee";
 
-        fire.type = "Fire";
+        eevee.displayName();
 
-        Water water = new Water();
+        // Single-level inheritance
+        PokemonType water = new PokemonType();
 
+        water.name = "Blastoise";
         water.type = "Water";
 
-        fire.printType();
-        water.printType();
+        water.displayName();
+        water.displayNameAndType();
+
+        // Multi-level inheritance
+        SecondaryType flying = new SecondaryType();
+
+        flying.name = "Charizard";
+        flying.type = "Fire";
+        flying.secondaryType = "Flying";
+
+        flying.displayName();
+        flying.displayNameAndType();
+        flying.displaySecondaryType(flying.secondaryType);
+
+        // Hierarchical Inheritance
+        PokemonGen two = new PokemonGen();
+        
+        two.name = "Celebi";
+        two.gen = 2;
+
+        two.displayName();
+        two.displayNameAndGen();
     }
 }
