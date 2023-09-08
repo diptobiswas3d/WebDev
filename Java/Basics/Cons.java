@@ -3,25 +3,24 @@ class Pokemon {
     String type;
     int gen;
 
-    // Non-parameterized Constructor
-    Pokemon () {
-        System.out.println("Non-parameterized Constructor called.");
+    // Non-parameterized Cons
+    Pokemon() {
+        System.out.println("Non-parameterized cons called.");
         name = "Eevee";
         type = "Normal";
         gen = 1;
     }
 
-    // Parameterized Constructor
-    Pokemon (String name, String type, int gen) {
-        System.out.println("Parameterized Constructor called.");
+    // Parameterized Cons
+    Pokemon(String name, String type, int gen) {
+        System.out.println("Parameterized cons called.");
         this.name = name;
         this.type = type;
         this.gen = gen;
     }
-
-    // Copy Constructor
+    // Copy cons
     Pokemon (Pokemon pkmn) {
-        System.out.println("Copy Constructor called.");
+        System.out.println("Copy cons called.");
         this.name = pkmn.name;
         this.type = pkmn.type;
         this.gen = pkmn.gen;
@@ -31,21 +30,18 @@ class Pokemon {
         System.out.println("Pokemon info displayed.");
         System.out.println("Name of this Pokemon is " + name);
         System.out.println("Type of this Pokemon is " + type);
-        System.out.println("This Pokemon is from Gen " + gen);
+        System.out.println("Gen of this Pokemon is " + gen);
     }
 }
-
-
-
 
 public class Cons {
     public static void main(String[] args) {
         Pokemon eevee = new Pokemon();
-        Pokemon pikachu = new Pokemon("Pikachu", "Electric", 1);
-        Pokemon shinyPikachu = new Pokemon(pikachu);
+        Pokemon latias = new Pokemon("Latias", "Dragon", 3);
+        Pokemon latios = new Pokemon(latias);
 
-        eevee.displayInfo();
-        pikachu.displayInfo();
-        shinyPikachu.displayInfo();
+        eevee.displayInfo();   
+        latias.displayInfo();    
+        latios.displayInfo(); 
     }
 }
