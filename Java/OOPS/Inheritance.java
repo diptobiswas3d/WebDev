@@ -1,35 +1,34 @@
-// Single-level Inheritance
-// Multi-level Inheritance
-// Hierarchical Inheritance
-// Hybrid inheritance
 class Pokemon {
     String name;
 
-    public void displayName() {
+    public void displayName () {
         System.out.println("Name of this Pokemon is " + name);
     }
 }
 
+// 1. Single-level inheritance
 class PokemonType extends Pokemon {
     String type;
 
-    public void displayNameAndType() {
+    public void displayNameAndType () {
         System.out.println(name + " is a " + type + " type Pokemon");
     }
 }
 
+// 2. Multi-level inheritance
 class SecondaryType extends PokemonType {
     String secondaryType;
 
-    public void displaySecondaryType() {
+    public void displaySecondary () {
         System.out.println(name + " has no secondary type.");
     }
 
-    public void displaySecondaryType(String secondaryType) {
+    public void displaySecondary (String secondaryType) {
         System.out.println(name + " has a secondary type " + secondaryType);
     }
 }
 
+// 3. Hierarchical inheritance
 class PokemonGen extends Pokemon {
     int gen;
 
@@ -38,10 +37,7 @@ class PokemonGen extends Pokemon {
     }
 }
 
-// Multiple Inheritance
-// Diamond Problem
-// interface
-
+// 4. Hybrid inheritance
 public class Inheritance {
     public static void main(String args[]) {
         Pokemon eevee = new Pokemon();
@@ -50,33 +46,34 @@ public class Inheritance {
 
         eevee.displayName();
 
-        // Single-level inheritance
-        PokemonType water = new PokemonType();
+        PokemonType blastoise = new PokemonType();
 
-        water.name = "Blastoise";
-        water.type = "Water";
+        blastoise.name = "Blastoise";
+        blastoise.type = "Water";
 
-        water.displayName();
-        water.displayNameAndType();
+        blastoise.displayName();
+        blastoise.displayNameAndType();
 
-        // Multi-level inheritance
-        SecondaryType flying = new SecondaryType();
+        SecondaryType charizard = new SecondaryType();
 
-        flying.name = "Charizard";
-        flying.type = "Fire";
-        flying.secondaryType = "Flying";
+        charizard.name = "Charizard";
+        charizard.type = "Fire";
+        charizard.secondaryType = "Flying";
 
-        flying.displayName();
-        flying.displayNameAndType();
-        flying.displaySecondaryType(flying.secondaryType);
+        charizard.displayName();
+        charizard.displayNameAndType();
+        charizard.displaySecondary(charizard.secondaryType);
 
-        // Hierarchical Inheritance
-        PokemonGen two = new PokemonGen();
-        
-        two.name = "Celebi";
-        two.gen = 2;
+        PokemonGen celebi = new PokemonGen();
 
-        two.displayName();
-        two.displayNameAndGen();
+        celebi.name = "Celebi";
+        celebi.gen = 2;
+
+        celebi.displayName();
+        celebi.displayNameAndGen();
     }
 }
+
+// Multiple inheritance
+// interface
+// Diamond Problem

@@ -2,6 +2,8 @@ class PokemonRegion {
     String region;
     int gen;
 
+    // method overloading
+    // compile-time
     public void info(String region) {
         System.out.println("This is the " + region + " region.");
     }
@@ -14,24 +16,27 @@ class PokemonRegion {
         System.out.println("This is the " + region + " region of Pokemon Gen " + gen);
     }
 
+    // method overriding
+    // runtime polymorphism
     public void attack() {
-        System.out.println("Pokemon Attacked!");
+        System.out.println("Pokemon attacked!");
     }
 }
 
 class Latias extends PokemonRegion {
     String name;
 
-     public void attack() {
+    public void attack () {
         System.out.println(name + " use Mist Ball.");
-     }
+    }
 }
+
 class Latios extends PokemonRegion {
     String name;
 
-     public void attack() {
+    public void attack() {
         System.out.println(name + " use Luster Purge.");
-     }
+    }
 }
 
 public class Polymorphism {
