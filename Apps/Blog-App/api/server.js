@@ -5,17 +5,26 @@ const mongoose = require("mongoose");
 const User = require("./models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
-const connectionString =
-  "mongodb+srv://diptobiswasanime4:abcd1234@cluster0.fljv3fw.mongodb.net/blog-1?retryWrites=true&w=majority";
+const connectionString = process.env.connectionString;
 
-const SECRET_KEY = "s3cr3tk3y";
+const SECRET_KEY = process.env.SECRET_KEY;
 
-async function connectDB(url) {
-  return mongoose.connect(url);
-}
+console.log(PORT);
+console.log(connectionString);
+console.log(SECRET_KEY);
+
+mongoose
+  .connect(connectionString)
+  .then(() => {
+    console.log("Connected to DB");
+  })
+  .catch(() => {
+    console.log("Failed to connect to DB");
+  });
 
 app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
 app.use(express.json());
@@ -49,15 +58,23 @@ app.post("/login", async (req, res) => {
   }
 });
 
-async function start() {
-  try {
-    await connectDB(connectionString);
-    app.listen(PORT, () => {
-      console.log(`App running on PORT ${PORT}`);
-    });
-  } catch (err) {
-    console.log(err);
-  }
-}
+app.listen(PORT, () => {
+  console.log(`App running on PORT ${PORT}`);
+});
 
-start();
+// async function connectDB(url) {
+//   return mongoose.connect(url);
+// }
+
+// async function start() {
+//   try {
+//     await connectDB(connectionString);
+//     app.listen(PORT, () => {
+//       console.log(`App running on PORT ${PORT}`);
+//     });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// start();
