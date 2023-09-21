@@ -7,10 +7,10 @@ function Room() {
   const { roomId } = useParams();
 
   async function meetingUI(element) {
-    const appID = 1770505026;
-    const serverSecret = "01a18f663bc50620d3eedd2c739dec7e";
+    const appId = 189338443;
+    const serverSecret = "e1fe77a56ff35dafa4fcc9864e213dbe";
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
-      appID,
+      appId,
       serverSecret,
       roomId,
       v4(),
@@ -26,7 +26,6 @@ function Room() {
       },
     });
   }
-
   return (
     <>
       <h2 style={{ textAlign: "center" }}>Room {roomId}</h2>

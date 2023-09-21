@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { useNavigate, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Room from "./Room";
 
@@ -21,13 +21,12 @@ function Home() {
   function handleJoin() {
     navigate(`/room/${roomId}`);
   }
-
   return (
     <main>
       <h1>Zegocloud Video Streaming App</h1>
       <input
         type="text"
-        placeholder="Enter room id"
+        placeholder="Enter room Id"
         value={roomId}
         onChange={(e) => setRoomId(e.target.value)}
       />
