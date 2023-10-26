@@ -4,6 +4,10 @@ body {
   background-color: whitesmoke;
 }
 
+h1 {
+  text-align: center;
+}
+
 .container {
   border: 2px solid black;
   width: 500px;
@@ -14,7 +18,7 @@ body {
 .rect {
   border: 2px solid green;
   background-color: lightgreen;
-  width: 360px;
+  width: 270px;
   height: 90px;
   margin: 5px;
   text-align: center;
@@ -22,28 +26,33 @@ body {
 }
 
 #rect-1 {
-  position: static;
+  position: absolute;
+  bottom: 50px;
 }
 
 #rect-2 {
-  position: fixed;
-  z-index: 3;
-  background-color: wheat;
-  /* bottom: 20px;
-  right: 20px;
-  width: 200px;
-  height: 250px;
-  border-radius: 15px; */
+  position: relative;
+  top: 50px;
 }
 
 #rect-3 {
-  position: absolute;
-  background-color: lightblue;
-  z-index: 2;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
 }
 
 #rect-4 {
-  position: absolute;
-  background-color: lightcoral;
-  z-index: 1;
+  position: sticky;
+  top: 0px;
+}
+
+#rect-16 {
+  position: sticky;
+  bottom: 0px;
+}
+
+#rect-14 {
+  position: fixed;
+  top: 0px;
+  right: 0px;
 }
